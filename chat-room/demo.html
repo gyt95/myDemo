@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat Room</title>
+</head>
+<body>
+    <h1>Chat Room</h1>
+    <input type="text" id="sendTxt">
+    <button id="sendBtn">发送</button>
+
+
+    <script type="text/javascript"> 
+        //创建一个Socket实例
+        var websocket = new WebSocket("ws://localhost:4000/");
+
+        function showMessage(str){  //创建div标签，包裹传递过来的文本参数，并append到body中
+            var div = document.createElement('div')
+            div.innerHTML = str;
+            document.body.appendChild(div)
+        }
+
+        //打开Socket
+        websocket.onopen = function(){
+            console.log("websocket open")
+            document.getElementById('sendBtn').onclick = function(){
+                var txt = document.getElementById('sendTxt').value;
+                if(txt){
+                    websocket.send(txt); //1.把文本发送给Server
+                }
+            }
+        }
+
+        //监听Socket关闭
+        websocket.onclose = function(){
+            console.log("websocket close")
+        }
+
+        //监听消息
+        websocket.onmessage = function(e){
+            console.log(e.data+"3232321321")
+            showMessage(e.data) //监听到信息后，调用函数，处理文本
+
+        }
+
+       
+    </script>
+</body>
+</html>
