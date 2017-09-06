@@ -6,24 +6,32 @@ var PORT = 4000
 var clientCount = 0
 
 var server = ws.createServer(function (conn) {
-    // console.log("New connection")
     
     clientCount++
     conn.nickname = 'user' + clientCount
 
+    var mes = {}
+    mes.type = 'enter'
+    mes.data = conn.nickname + ' comes in '
     //向每个客户端广播消息
-    broadcast(conn.nickname + ' comes in ')
+    broadcast(JSON.stringify(mes))//为什么这里不能直接发送mes，而需要JSON.stringify(mes)
 
     //有客户端发送消息时，广播此消息
 	conn.on("text", function (str) {
         console.log("Receive msg: "+ str)
-        broadcast(conn.nickname + '：'+str)
+        var mes = {}
+        mes.type = 'message'
+        mes.data = conn.nickname + '：'+str
+        broadcast(JSON.stringify(mes))
     })
 
     //客户端关闭时，广播此消息
 	conn.on("close", function (code, reason) {
-		console.log("Connection closed")
-        broadcast(conn.nickname + ' left ')
+        console.log("Connection closed")
+        var mes = {}
+        mes.type = 'leave'
+        mes.data = conn.nickname + ' left '
+        broadcast(JSON.stringify(mes))
     })
 
     conn.on("error", function (err) {
