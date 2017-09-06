@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Chat Room</title>
+    <script src="socket.io.js"></script>
 </head>
 <body>
     <h1>Chat Room</h1>
@@ -14,7 +15,8 @@
 
     <script type="text/javascript"> 
         //创建一个Socket实例
-        var websocket = new WebSocket("ws://localhost:4000/");
+        // var websocket = new WebSocket("ws://localhost:4000/");
+        var socket = io("ws://localhost:4000/")
 
         function showMessage(str, type){  //创建div标签，包裹传递过来的文本参数，并append到body中
             var div = document.createElement('div')
@@ -28,30 +30,25 @@
         }
 
         //打开Socket
-        websocket.onopen = function(){
-            console.log("websocket open")
-            document.getElementById('sendBtn').onclick = function(){
-                var txt = document.getElementById('sendTxt');
-                if(txt.value){
-                    websocket.send(txt.value); //1.把文本发送给Server
-                }
-                txt.value = ""
+        document.getElementById('sendBtn').onclick = function(){
+            var txt = document.getElementById('sendTxt');
+            if(txt.value){
+                socket.emit('message', txt.value); //这边是socket.emit()来发送消息，服务器则要用socket.on来接收
             }
+            txt.value = ""
         }
 
-        //监听Socket关闭
-        websocket.onclose = function(){
-            console.log("websocket close")
-        }
+        socket.on('enter', function(data){
+            showMessage(data, 'enter')
+        })
 
-        //监听消息
-        websocket.onmessage = function(e){
-            console.log(e.data) //e.data仅仅是消息本身，其实应该还有消息的属性。即应是消息对象
+        socket.on('message', function(data){
+            showMessage(data, 'message')
+        })
 
-            var mes = JSON.parse(e.data) //还是不太懂为何要JSON.parse
-            showMessage(mes.data, mes.type) //监听到信息后，调用函数，处理文本
-
-        }
+        socket.on('leave', function(data){
+            showMessage(data, 'leave')
+        })
 
        
     </script>
