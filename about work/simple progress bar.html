@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>纯CSS制作静态进度条</title>
+	<style>
+		.wrapper{
+			background: #ccc;
+			width: 100px; /*关键代码*/
+			border: 1px solid;
+		}
+		.bar{
+			position: relative;/*关键代码*/ /*提供相对定位给子元素span进行绝对定位*/
+			height: 15px;/*关键代码*/
+			line-height: 15px;/*关键代码*/
+			background: orange;
+		}
+		.bar span{
+			position: absolute; /*关键代码*/ /*绝对定位，使其不要溢出.wrapper*/
+			text-align: center;
+			width: 100px; /*关键代码，要与.wrapper宽度一致*/
+		}
+		.wrapper:nth-of-type(2){
+			margin-top: 10px;
+		}
+
+		/*另一情况，文字在进度条外时，如何使文字和进度条水平线呢？*/
+		/*重点是vertical-align: middle和line-height的配合*/
+		.new{
+			display: inline-block;
+		    vertical-align: middle;	
+		}
+		.remain{
+		    vertical-align: middle;
+		    font-size: 14px;
+		    line-height: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="bar" style="width: 80%">
+			<span>80%</span>
+		</div>
+	</div>
+
+	<div class="wrapper" style="">
+		<div class="bar" style="width: 50%">
+			<span>50%</span>
+		</div>
+	</div>
+	
+	<div class="container" style="margin-top: 10px;">
+		<span class="remain">剩余72%</span>
+		<div class="wrapper new">
+			<div class="bar" style="width: 72%">
+				<span></span>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
