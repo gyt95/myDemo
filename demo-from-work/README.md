@@ -3,3 +3,7 @@
 [css编写静态进度条](https://gyt95.github.io/myDemo/demo-from-work/simple%20progress%20bar.html)
 
 应用：显示用户经验值、商品剩余数量等
+
+[css3常见布局](https://gyt95.github.io/myDemo/demo-from-work/common%20flex%20layout/index.html)
+
+应用：web应用中的商品展示列表等

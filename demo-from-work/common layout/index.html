@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3常见Flex布局</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script>   
+        (function (doc, win) {
+                var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if(clientWidth>=640){
+                            docEl.style.fontSize = '100px';
+                        }else{
+                            docEl.style.fontSize = 10 * (clientWidth / 640) + 'px';
+                        }
+                    };
+        
+                if (!doc.addEventListener) return;
+                win.addEventListener(resizeEvt, recalc, false);
+                doc.addEventListener('DOMContentLoaded', recalc, false);
+            })(document, window);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <img src="./images/banner.png" alt="">
+        </div>
+        <div id="main" class="main">
+            <div class="title">
+                <ul>
+                    <li><a href="#">热门</a></li>
+                    <li><a href="#">资讯</a></li>
+                    <li><a href="#">新服开启</a></li>
+                </ul>
+            </div>
+            <ul>
+                <li class="game-list">
+                    <div class="game-detail">
+                        <img src="./images/index_hjqy.png" alt="">
+                        <div class="game-text">
+                            <p>楚乔传</p>
+                            <p>人气：3400</p>
+                            <span>官方正版授权，信仰之战一触即发</span>
+                        </div>
+                    </div>
+                    <a href="#" class="play-btn"><button>开始玩</button></a>
+                </li>
+                <li class="game-list">
+                    <div class="game-detail">
+                        <img src="./images/index_hjqy.png" alt="">
+                        <div class="game-text">
+                            <p>楚乔传</p>
+                            <p>人气：3400</p>
+                            <span>官方正版授权，信仰之战一触即发</span>
+                        </div>
+                    </div>
+                    <a href="#" class="play-btn"><button>开始玩</button></a>
+                </li>
+                <li class="game-list">
+                    <div class="game-detail">
+                        <img src="./images/index_hjqy.png" alt="">
+                        <div class="game-text">
+                            <p>楚乔传</p>
+                            <p>人气：3400</p>
+                            <span>官方正版授权，信仰之战一触即发</span>
+                        </div>
+                    </div>
+                    <a href="#" class="play-btn"><button>开始玩</button></a>
+                </li>
+                <li class="game-list">
+                    <div class="game-detail">
+                        <img src="./images/index_hjqy.png" alt="">
+                        <div class="game-text">
+                            <p>楚乔传</p>
+                            <p>人气：3400</p>
+                            <span>官方正版授权，信仰之战一触即发</span>
+                        </div>
+                    </div>
+                    <a href="#" class="play-btn"><button>开始玩</button></a>
+                </li>
+            </ul>
+        </div> 
+    </div> 
+</body>
+</html>
