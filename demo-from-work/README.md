@@ -4,6 +4,6 @@
 
 应用：显示用户经验值、商品剩余数量等
 
-[css3常见布局](https://gyt95.github.io/myDemo/demo-from-work/common%20flex%20layout/index.html)
+[css3常见布局](https://gyt95.github.io/myDemo/demo-from-work/common%20layout/index.html)（请在Chrome浏览器的模拟移动设备模式下预览效果）
 
 应用：web应用中的商品展示列表等
