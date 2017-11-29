@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <style>
+        li{list-style:none}
+        a{color:#000;display: inline-block}
+    </style>
+</head>
+<body>
+    <h3>以下是爬虫所得数据</h3>
+    
+    {% for index, val in content %}
+        {{index+1}}.
+        <a href={{ content[index].href }}>
+            <li>{{ content[index].title}}</li>
+        </a>
+        <br/>
+    {% endfor %}
+</body>
+</html>
