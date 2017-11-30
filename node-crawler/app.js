@@ -23,30 +23,76 @@ app.engine('html', swig.renderFile);
     然后定义路由规则 router.get('/',function(){...})
     最后使用 app.use('/', router)
 */
-app.get('/', (req, res, next)=>{
+app.get('/', (req, res, next)=>{ 
     const baseUrl = 'https://cnodejs.org';
+    const pages = 5; // 爬虫总页数（可自定义）
 
-    superagent.get('https://cnodejs.org/?tab=ask')
+    let currentPage = 1,  // 当前页码初始化为1，随着递归而增加，直到大于总页数pages
+        items = [];  // 空数组，用于存放每组爬虫得到的数据
+    
+    function test(currentPage,items){
+        superagent.get(`https://cnodejs.org/?tab=all&page=${currentPage}`)
+        .end((err, sres)=>{
+            if(err) {return next(err);}
+            
+            // sres.text里面是网页的Html内容
+            // 通过cheerio.load得到一个实现了jquery接口的变量
+            const $ = cheerio.load(sres.text);
+            $('#topic_list .topic_title').each((idx, element)=>{
+                const $element = $(element);
+                items.push({
+                    title: $element.attr('title'),
+                    href: baseUrl + $element.attr('href')
+                })
+            })
+            currentPage++;
+            if(currentPage<=pages){
+                test(currentPage,items)
+                console.log(`第${currentPage}页已抓取完毕`)
+            }else{
+                console.log(`爬虫到第${currentPage}页，爬虫结束`)
+                // res.send(last) //可用于在页面中查看数据结构
+                res.render('index',{
+                    title:'首页 ',
+                    content: items
+                })
+            }
+        })
+    }
+    test(currentPage,items)
+})
+
+app.get('/game', (req, res, next)=>{  
+    superagent.get('http://a.9game.cn/category/hot/1_0_0_0/')
     .end((err, sres)=>{
-        if(err) {return next(err);}
+        if(err){
+            return next(err);
+        }
 
-        // sres.text里面是网页的Html内容
-        // 通过cheerio.load得到一个实现了jquery接口的变量
         const $ = cheerio.load(sres.text);
         const items = [];
-        $('#topic_list .topic_title').each((idx, element)=>{
+        $('#ajaxContainer .category-list-item').each((idx, element)=>{
             const $element = $(element);
+            
+            // console.log($element)
+            let game = {
+                href: $element.find('.con').attr('href'),
+                img: $element.find('.pic img').attr('src'),
+                title: $element.find('.name').text(),
+                type: $element.find('.type').text(),
+                desc: $element.find('.desc').text()
+            }
             items.push({
-                title: $element.attr('title'),
-                href: baseUrl + $element.attr('href')
+                game: game
             })
+            // console.log(items)
         })
-        console.log(items)
-        res.render('index',{
-            title:'首页 ',
+        res.render('game',{
+            title:'游戏列表',
             content: items
         })
     })
-}).listen(9000, ()=>{
-    console.log('listening the port 9000...')
 })
+
+app.listen(9000)
+console.log('listening the port 9000...')

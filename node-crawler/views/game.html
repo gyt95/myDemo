@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <style>
+        li{list-style:none}
+        a{color:#000;display: inline-block}
+        span{display: block}
+        .list{
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <h3>以下游戏数据爬取自某游戏网站</h3>
+    
+    {% for index, val in content %}
+        <p>{{index+1}}.</p>
+        <a href = {{ content[index].game.href }}>
+            <li class="list">
+                <div>
+                    <img src={{ content[index].game.img }} alt="">                
+                </div>
+                <div>
+                    <span>{{ content[index].game.title }}</span>
+                    <span>{{ content[index].game.type }}</span>
+                    <span>{{ content[index].game.desc }}</span>
+                </div>
+            </li>
+        </a>
+        <br/>
+    {% endfor %}
+</body>
+</html>
