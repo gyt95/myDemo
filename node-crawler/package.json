@@ -12,6 +12,7 @@
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.2",
     "superagent": "^3.8.1",
-    "swig": "^1.4.2"
+    "swig": "^1.4.2",
+    "uglify-js": "^3.2.0"
   }
 }
