@@ -19,7 +19,7 @@
 ```
 npm install  // 安装依赖
 
-npm start  // 开启本地服务器localhost:9000
+node 想运行的js
 
 ```
 

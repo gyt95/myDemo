@@ -3,6 +3,7 @@ const superagent = require('superagent');
 const cheerio = require('cheerio');
 const swig = require('swig');
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
 
@@ -25,11 +26,13 @@ app.engine('html', swig.renderFile);
 */
 app.get('/', (req, res, next)=>{ 
     const baseUrl = 'https://cnodejs.org';
-    const pages = 5; // 爬虫总页数（可自定义）
+    const pages = 20; // 爬虫总页数（可自定义）
 
     let currentPage = 1,  // 当前页码初始化为1，随着递归而增加，直到大于总页数pages
-        items = [];  // 空数组，用于存放每组爬虫得到的数据
-    
+        items = [],  // 空数组，用于存放每组爬虫得到的数据
+        start = new Date(),  //开始时间
+        end = false;       //结束时间
+
     function test(currentPage,items){
         superagent.get(`https://cnodejs.org/?tab=all&page=${currentPage}`)
         .end((err, sres)=>{
@@ -46,20 +49,33 @@ app.get('/', (req, res, next)=>{
                 })
             })
             currentPage++;
-            if(currentPage<=pages){
+            if(currentPage<pages){
                 test(currentPage,items)
-                console.log(`第${currentPage}页已抓取完毕`)
+                // console.log(`第${currentPage}页已抓取完毕`)
             }else{
+                end = new Date()
+                console.log(items)
                 console.log(`爬虫到第${currentPage}页，爬虫结束`)
-                // res.send(last) //可用于在页面中查看数据结构
-                res.render('index',{
-                    title:'首页 ',
-                    content: items
-                })
+                console.log(`开始时间${start}`)
+                console.log(`结束时间${end}`)
+                console.log('耗时：'+ (end - start) +'ms' +' --> '+ (Math.round((end - start)/1000/60*100)/100) +'min');
+                console.log(`抓取数据总共${items.length}条`)
+                fs.writeFileSync('output.json', items)
+                res.send(items) //可用于在页面中查看数据结构
+                // res.render('index',{
+                //     title:'首页 ',
+                //     content: items
+                // })
             }
         })
     }
+
     test(currentPage,items)
+
+    //结果：
+    //抓取 200 条数据用时0.04min 2311ms 2s  6页
+    //抓取 400 条数据用时0.08min 4674ms 4s 11页
+    //抓取 760 条数据用时0.16min 9313ms 9s 20页(最短时间7774ms 0.13min)
 })
 
 app.get('/game', (req, res, next)=>{  
@@ -93,6 +109,7 @@ app.get('/game', (req, res, next)=>{
         })
     })
 })
+
 
 app.listen(9000)
 console.log('listening the port 9000...')
