@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>射击</title>
+	<style>
+		/*img{
+			display: inline-block;
+		}*/
+		.container{height:200px;overflow: hidden;position: relative;}
+		.box{width:100px;height:100px;display:inline-block;margin:0;position: absolute;}
+		.box1{background:orange;}
+		.box2{background:blue;}
+		.box3{background:green;}
+		.sniper{width:50px;height:50px;position: absolute;border:1px solid;pointer-events:none;}
+		/*pointer-events:none点击穿透当前的div*/
+		.new{margin-left: 10px;}
+	</style>
+</head>
+<body>
+	<!-- <script src="./js/game.js"></script> -->
+
+		<!-- <img src="" alt=""> -->
+	<div class="container">
+		<div class="box box1"></div>
+		<!-- <div class="box box2"></div>
+		<div class="box box3"></div> -->
+	</div>
+
+	<div class="sniper"></div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(function(){
+			/**
+			 * 思路是：
+			 * 1.默认新增3个div
+			 * 2.当点击某个方块后，方块消失
+			 * 3.此时，总div数不够3个，会立即新增一个div
+			 * 4.新增的div的颜色是随机
+			 * 
+			 * 扩展玩法：计时器、计数器
+			 */
+			var arrLength = 1;
+
+			var left = $('.box1').offset().left;
+			var speed = 5;
+			var boxCreated = false;
+			console.log($(window).width())
+			
+			setInterval(moveBox,100)
+
+			function moveBox(){  // 方块移动
+
+				if(boxCreated==true){
+					left = 0;
+					boxCreated = false;
+					console.log('left??'+left)
+				}
+				var last = left + speed;
+				left = last
+				$('.box1').css('left',left)
+				console.log(left)
+				if(left > $(window).width()){
+					$('.box1').css('left',0);
+				}
+				if($('.box1').css('left') === '0px'){
+					console.log(44)
+					left = 0;
+				}
+			}
+
+			$(document).bind('mousemove',function(e){
+		    	$('.sniper')
+		    		.css('left',e.pageX-25)
+		    		.css('top',e.pageY-25)
+
+		    	// console.log(e.pageX,e.pageY)
+			});
+
+			$('body').on('mousedown', '.box', function(){
+				console.log('点中了...')
+				console.log($(this).attr('class'))
+
+				$(this).fadeOut(600, function(){
+					$(this).remove();
+					boxCreated = false;
+					console.log(boxCreated)
+				});
+				arrLength--;
+				if(arrLength<1){
+					setTimeout(function(){
+						boxCreated = true;
+						var newBox = $('<div></div>').addClass('box box1 new').css('left',0)
+						$('.container').append(newBox);
+						console.log(boxCreated)
+					},800)
+				}
+			});
+
+		})
+	</script>
+</body>
+</html>
