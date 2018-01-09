@@ -15,8 +15,20 @@ let items = [],
     sum = 0,
     startDate = new Date(), 
     endDate = false,
-    viewsTotal = [];
+    viewsTotal = [],
+    times = 0;
 
+// 连接数据库
+const mysql = require('mysql');
+const db = mysql.createConnection({
+    host: '127.0.0.1',
+    user: 'root',
+    password: '123456',
+    database: 't1'
+});
+db.connect();
+
+// 获取所有要抓取的网页链接
 for(let i = 1; i <= 5; i++){
     const tmp = `https://cnodejs.org/?tab=all&page=${i}`;
     urls.push(tmp);
@@ -80,26 +92,49 @@ urls.forEach((item)=>{
         if(err) { console.error(err);flag++}
 
         const $ = cheerio.load(sres.text);
-        $('#topic_list .topic_title').each((idx, element)=>{
+
+        $('#topic_list .topic_title').each((idx,element)=>{
             const $element = $(element);
-            items.push({
+            let obj = {
                 title: $element.attr('title'),
                 href: baseUrl + $element.attr('href')
-            })
+            }
+            items.push(obj)
             sum++;
         })
         // fs.writeFileSync('output.json', JSON.stringify(items, null, 2))
-        console.log(items)
-        console.log('错误flag数: '+flag)
+        console.log(items.length)
+        // console.log('错误flag数: '+flag)
         console.log('抓取成功数: '+sum)
 
         if(sum>0){ 
             endDate = new Date();
             console.log('耗时： ' + (endDate-startDate) + 'ms')
+            times++;
+            if(times===5){
+                console.log('抓取结束')
+                console.log(items.length)
+                for(var i=0; i<items.length; i++){
+                    console.log(`第${i}条:${items[i].title}`)
+                    db.query('insert into cnodejs set ?', items[i], function(err, result){
+
+                        if(err) throw err;
+                        if(!!result){
+                            console.log('插入成功')
+                        }else{
+                            console.log(i)
+                            console.log('插入失败')
+                        }
+                    })
+                }
+                
+                // console.log('......')
+                // return;
+            }
         }
 
         //传递baseUrl+items.href
-        ep.emit('xxx.html', 'get successful') //检测emit事件，发生指定次数后调用ep.after
+        // ep.emit('xxx.html', 'get successful') //检测emit事件，发生指定次数后调用ep.after
     })
 })
 
