@@ -18,14 +18,14 @@ page.open(url, function(status){
         // function(){
             setTimeout(function(){
                 var flag = 0,result = '';
-                result = page.evaluate(function(){ 
+                result = page.evaluate(function(){
                     var sum = '', // 获取DOM总和
                         text = '',
                         num = 0,
                         list = document.querySelectorAll('.news_article'),  //
                         aImg = document.querySelectorAll('.news_article>.na_pic'),  // a标签的link
                         aText = document.querySelectorAll('.news_title>h3>a') // 新闻标题
-                    for(var i = 1; i<list.length; i++){
+                    for(var i = 0; i<list.length; i++){
                         var tmp = aImg[i].getAttribute('href');
                         var tmp2 = aText[i].innerText;
                         sum += tmp + '\n';
