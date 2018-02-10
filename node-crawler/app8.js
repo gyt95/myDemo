@@ -14,6 +14,8 @@ page.open(url, function(status){
     }
     else{
         console.log('开始查找...')
+
+        // includeJs方法用于页面加载外部脚本，加载结束后就调用指定的回调函数。
         // page.includeJs("http://code.jquery.com/jquery-1.10.1.min.js", 
         // function(){
             setTimeout(function(){
@@ -38,11 +40,20 @@ page.open(url, function(status){
                 console.log(555)
                 // result = result.replace(/\s/,'')
                 console.log(result)
+
+                /**
+                 * render方法用于将网页保存成图片，参数就是指定的文件名。
+                 * 该方法根据后缀名，将网页保存成不同的格式，目前支持PNG、GIF、JPEG和PDF。
+                 */
+                // page.render('test.png')
                 phantom.exit(0);
             }, 4000)
         // })
 
-
+        /**
+         * 网页内部的console语句，以及evaluate方法内部的console语句，
+         * 默认不会显示在命令行。这时可以采用onConsoleMessage回调函数
+         */
         page.onConsoleMessage = function(msg) {
             system.stderr.writeLine('console: ' + msg);
         };

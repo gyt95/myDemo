@@ -33,3 +33,7 @@ function getTaoBaoData(){
         }
     })
 }
+
+
+// Phantomjs+Nodejs+Mysql数据抓取（1.数据抓取）
+// http://blog.csdn.net/jokerkon/article/details/50868880
