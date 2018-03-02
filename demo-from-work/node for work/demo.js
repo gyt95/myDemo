@@ -1,63 +1,82 @@
-/*
+﻿/*
  * @Author: gyt95.kwan 
  * @Date: 2017-11-16 14:34:33 
  * @Last Modified by: gyt95.kwan
- * @Last Modified time: 2017-12-27 10:41:21
+ * @Last Modified time: 2018-03-02 11:32:46
  */
-const fs = require('fs'),
-      gameName = 'gjyp',
-      baseUrl = `https://cdn.qitiangame.com/apk/${gameName}/`;
+const fs = require('fs'),   // Nodejs文件系统模块
+      path = require('path'), // Nodejs路径模块
+      readline = require('readline'); // Nodejs逐行读取模块（实现输入输出）
 
 console.log('>>> BEGIN >>>');
-console.log('正在生成所有链接...');
 
-let sum = '',
-    join = require('path').join,
+let sum = '', // 文件总数
+    gameName='',   // 游戏包名
+    join = path.join,  // 多参数路径组合
+    fileNames = '', // 
+    baseUrl = 'https://cdn.qitiangame.com/apk'  // 基础路径
+
+let rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+})
+
+rl.question('输入游戏名拼音缩写：',function(answer){
+
+    gameName = answer;
+    baseUrl += `/${gameName}/`;
     fileNames = findSync('./');
 
-function findSync(startPath) {
-    let result = [], arr = [];
+    function findSync(startPath) {
+        let result = [], arr = [];
 
-    finder(startPath);
-    filterFile();
-    sortArr();
+        finder(startPath);
+        filterFile();
+        sortArr();
 
-    function finder(path) {
-        let files = fs.readdirSync(path); //返回包含 指定目录下所有文件名称 的一个数组
+        function finder(path) {
+            let files = fs.readdirSync(path); 
+            
+            files.forEach((val, index) => {
+                let fPath = join(path, val),
+                    stats = fs.statSync(fPath); 
+
+                if(stats.isDirectory())
+                    finder(fPath);
+                if(stats.isFile()) 
+                    result.push(fPath);
+            });
+        }
+
+        function filterFile(){   //过滤掉后缀不匹配的文件
+            result.filter(item => {
+                if(item.indexOf('.apk')!=-1){
+                    return arr.push(item.substr(item.indexOf('\\')+1, item.length));
+                }
+            })
+        }
         
-        files.forEach((val, index) => {
-            let fPath = join(path, val),
-                stats = fs.statSync(fPath); //返回stat对象，包含所有文件信息，主要用于判断是folder还是file
-
-            //如果是目录，再次调用finder()，传入当期目录路径，用readdirSync()再次读取此目录下所有文件
-            if(stats.isDirectory())
-                finder(fPath);
-            //如果是文件，则添加到result数组中
-            if(stats.isFile()) 
-                result.push(fPath);
-        });
+        function sortArr(){
+            
+            arr.sort((a,b)=>{
+                a = a.split('_')[0];
+                b = b.split('_')[0];
+                return a-b;
+            }).map(item => {
+                console.log(baseUrl + item);
+                sum += `${baseUrl}${item}\n`;
+            })
+        }
     }
 
-    function filterFile(){  //过滤掉多余文件
-        result.filter(item => {
-            if(item.indexOf('.apk')!=-1){
-                return arr.push(item.substr(item.indexOf('\\')+1, item.length));
-            }
-        })
-    }
+    console.log('');
+    console.log('链接生成完毕！');
+    rl.close();
+})
 
-    function sortArr(){
-        arr.sort((a,b)=>{
-            a = a.split('_')[0];
-            b = b.split('_')[0];
-            return a-b; //a-b输出从小到大排序，b-a输出从大到小排序
-        }).map(item => {
-            console.log(baseUrl + item);
-            sum += `${baseUrl}${item}\n`;
-        })
-    }
-}
+rl.on('close',function(){
+    process.exit(0)
+})
 
 fs.writeFileSync('link.txt', sum);
 
-console.log('>>> END >>>');
