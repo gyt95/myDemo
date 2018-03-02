@@ -2,28 +2,27 @@
  * @Author: gyt95.kwan 
  * @Date: 2017-11-16 14:34:33 
  * @Last Modified by: gyt95.kwan
- * @Last Modified time: 2018-03-02 11:32:46
+ * @Last Modified time: 2018-03-02 15:00:13
  */
 const fs = require('fs'),   // Nodejs文件系统模块
       path = require('path'), // Nodejs路径模块
-      readline = require('readline'); // Nodejs逐行读取模块（实现输入输出）
+      readline = require('readline'), // Nodejs逐行读取模块（实现输入输出）
+      rl = readline.createInterface({  // 创建接口实例
+        input: process.stdin,  // 进程监听输入，即输入流
+        output: process.stdout // 进程监听输出，即输出流
+      }) 
+    // process console都是nodejs的全局变量对象，可直接使用，不需要require
+    
+let sum = '', // 文件总数
+    join = path.join,  // 多参数路径组合
+    fileNames = '', // 文件名变量
+    baseUrl = 'https://www.xxx.com/apk'  // 基础路径
+
 
 console.log('>>> BEGIN >>>');
 
-let sum = '', // 文件总数
-    gameName='',   // 游戏包名
-    join = path.join,  // 多参数路径组合
-    fileNames = '', // 
-    baseUrl = 'https://cdn.qitiangame.com/apk'  // 基础路径
+rl.question('输入游戏名拼音缩写：',function(gameName){
 
-let rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
-
-rl.question('输入游戏名拼音缩写：',function(answer){
-
-    gameName = answer;
     baseUrl += `/${gameName}/`;
     fileNames = findSync('./');
 
@@ -57,7 +56,6 @@ rl.question('输入游戏名拼音缩写：',function(answer){
         }
         
         function sortArr(){
-            
             arr.sort((a,b)=>{
                 a = a.split('_')[0];
                 b = b.split('_')[0];
@@ -78,5 +76,5 @@ rl.on('close',function(){
     process.exit(0)
 })
 
-fs.writeFileSync('link.txt', sum);
+fs.writeFileSync('output.txt', sum);
 
