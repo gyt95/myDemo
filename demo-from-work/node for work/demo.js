@@ -2,7 +2,7 @@
  * @Author: gyt95.kwan 
  * @Date: 2017-11-16 14:34:33 
  * @Last Modified by: gyt95.kwan
- * @Last Modified time: 2018-03-05 11:27:36
+ * @Last Modified time: 2018-03-05 12:06:02
  */
 const fs = require('fs'),   // Nodejs文件系统模块
     path = require('path'), // Nodejs路径模块
@@ -47,14 +47,15 @@ rl.question('输入游戏名拼音缩写：', gameName => {
             b = b.split('_')[0];
             return a - b;
         }).map(item => {                // 遍历数组并输出
-            str = `${baseUrl}/${gameName}/${item}`
+            str = `${baseUrl}/${gameName}/${item}\n`
             console.log(str);
-            sum += `str/\n`;
+            sum += str;
         })
     }
 
     read(rootPath);
     handle();
+    fs.writeFileSync('output.txt', sum);
 
     console.log(`\n链接生成完毕！`);
     rl.close();
@@ -63,6 +64,4 @@ rl.question('输入游戏名拼音缩写：', gameName => {
 rl.on('close', () => {
     process.exit(0)
 })
-
-fs.writeFileSync('output.txt', sum);
 
