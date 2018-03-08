@@ -10,9 +10,9 @@
 
 ### 用到的技术
 
-[express](https://github.com/expressjs/express): 一个基于 Node.js 平台的极简、灵活的 web 应用开发框架，它提供一系列强大的特性，帮助你创建各种 Web 和移动设备应用。
-[superagent](https://github.com/visionmedia/superagent): Nodejs里一个轻量的、渐进式的Ajax api，可读性好、学习曲线低，内部依赖nodejs原生的请求api。**用于发送GET POST等请求的http模块**
-[cheerio](https://github.com/cheeriojs/cheerio): 为服务器专门设计的快速、灵活、实施的jQuery核心实现。**用法和jQuery一样，用于操作DOM并抓取页面中所需的数据**
+[express](https://github.com/expressjs/express): 一个基于 Node.js 平台的极简、灵活的 web 应用开发框架，它提供一系列强大的特性，帮助你创建各种 Web 和移动设备应用。  
+[superagent](https://github.com/visionmedia/superagent): Nodejs里一个轻量的、渐进式的Ajax api，可读性好、学习曲线低，内部依赖nodejs原生的请求api。**用于发送GET POST等请求的http模块**  
+[cheerio](https://github.com/cheeriojs/cheerio): 为服务器专门设计的快速、灵活、实施的jQuery核心实现。**用法和jQuery一样，用于操作DOM并抓取页面中所需的数据**  
 
 ### 运行
 
@@ -27,6 +27,7 @@ node 想运行的js
 
 - [x] 单页爬虫 -- 完成
 - [x] 多页爬虫 -- 完成
+- [x] 抓取异步数据 -- 完成
 - [ ] 存入数据库 -- 未完成
 - [ ] 下载图片 -- 未完成
 - [ ] 动态爬虫 -- 未完成
