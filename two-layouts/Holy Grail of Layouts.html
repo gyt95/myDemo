@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圣杯布局</title>
+    <style>
+        .main,.left,.right{
+            float: left;
+        }
+        .main{
+            background: lightgreen;
+            width:100%;
+            height:150px;
+        }
+        .left{
+            background: lightblue;
+            width:200px;
+            height:100px;
+            margin-left: -100%; /*负外边距实现左浮动*/
+        }
+        .right{
+            background: lightcoral;
+            width:100px;
+            height:100px;
+            margin-left: -100px; /*这个则由width来决定*/
+        }
+
+
+        /* 以上的样式会让left/right和main重叠，main很大部分被挡住了，需要将main缩到中间位置 */
+        .container{
+            padding: 0 100px 0 200px; /* 1 */
+        }
+        .left,.right{
+            position: relative; /* 2 */
+        }
+        .l{
+            left: -200px; /* 3 */
+        }
+        .r{
+            right: -100px; /* 3 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 圣杯布局涉及到：float、负外边距、相对定位 -->
+    <div class="container">
+        <div class="main"></div> <!--重要的东西放在文档流前面，优先渲染-->
+        <div class="left l"></div>
+        <div class="right r"></div>
+    </div>
+</body>
+</html>
