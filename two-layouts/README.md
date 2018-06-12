@@ -34,4 +34,8 @@
 
 2.在div标签中写中间栏的内容  
 
-3.div标签设置margin-left和margin-right即可  
+3.div标签设置margin-left和margin-right让出left和right的位置 
+
+## 总结
+
+实现三栏布局，圣杯布局利用的是padding+相对定位，而双飞翼布局利用的是对中间栏增加一个子div并设置margin
