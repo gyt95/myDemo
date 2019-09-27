@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>modal高度随内容自适应</title>
+    <style>
+        .mask{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #333;
+        }
+        .modal-wrap{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            text-align: center;     /* 最后要记得加上 modal居中*/
+        }
+        .modal-wrap::before{
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            width: 0;
+        }
+        .modal{
+            font-size: 14px;
+            color: rgba(0,0,0,0.65);
+            position: relative;
+            /* padding-bottom: 24px; */
+
+            display: inline-block;
+            vertical-align: middle;
+            text-align: left;
+            width: 420px;
+            overflow-y: scroll;
+            max-height: 80%;
+            background: #fff;
+            border-radius: 10px;
+        }
+        .content{
+            position: relative;
+            background-color: #fff;
+            border: 0;
+            /* border-radius: 4px; */
+            background-clip: padding-box;
+        }
+        .modal-header{
+            padding: 16px 24px;
+            border-radius: 4px 4px 0 0;
+            background: #fff;
+            color: rgba(0,0,0,0.65);
+            border-bottom: 1px solid #e8e8e8;
+        }
+        .modal-body{
+            padding: 24px;
+            font-size: 14px;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+        .modal-body span{
+            display: block;
+            margin: 10px;
+        }
+        ::-webkit-scrollbar{
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-thumb{  /* 滚动条里面的小方块，能向上向下移动（或往左往右移动，取决于是垂直滚动条还是水平滚动条）*/
+            background: #ccc;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-track{  /* 滚动条的轨道（里面装有Thumb） */
+            background: #fff;
+            border-radius: 0 10px 10px 0;   /* 圆角边框四个参数对应左上、右上、右下、左下 */
+            /* 设置滚动条轨道的圆角，使其与modal的圆角融合 */
+        }
+        ::-webkit-scrollbar-corner{
+            background: #fff;
+        }
+        ::-webkit-scrollbar-button:vertical:start{
+            background: #fff;
+            height: 5px;
+            border-radius: 0 10px 0px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="mask"></div>
+    <div class="modal-wrap">
+        <div class="modal">
+            <div class="content">
+                <div class="modal-header">
+                    Vertically centered modal dialog
+                </div>
+                <div class="modal-body">
+                    <span>记录人：小明</span>
+                    <span>
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        <!-- 很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容 -->
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容很大一段内容很大一段内容
+                        很大一段内容很大一段内容</span>
+                    <span>备注：哈哈哈哈哈</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
