@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>svg动态进度条</title>
+</head>
+<body>
+    <svg>
+        <circle id="circle" cx="100" cy="50" r="40" 
+            fill="none" stroke="#00A5E0"
+            stroke-dasharray="0 1080"
+            style="fill-opacity: 0.5;stroke-width:10;" />
+
+    </svg>
+
+    <svg>
+        <rect id="rect" width="200" height="20" x="10" y="10" rx="10" ry="10"
+            fill="#ccc" stroke="#ccc"
+            style="stroke-width:10;" 
+        />
+    </svg>
+
+    <script>
+        window.onload = function(){
+            var dom = document.getElementsByTagName('circle')
+            var dom2 = document.getElementsByTagName('rect')
+            var percent = 0;
+            var timer = null;
+
+            function getS(){
+                circle.setAttribute('stroke-dasharray', 2 * percent + " 1080")
+                rect.setAttribute('width', 100 * percent / 100)
+                percent+=1
+            }
+
+            setInterval(function(){
+                console.log(percent)
+                if(percent < 130) {
+                    getS()
+                }else{
+                    timer = clearInterval()
+                }
+            }, 200)
+        }
+    </script>
+</body>
+</html>
