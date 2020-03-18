@@ -1,0 +1,429 @@
+{
+    "clients": [
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-Bc.png",
+            "name": "B超.png",
+            "alias": "icon-Bc.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-CT.png",
+            "name": "CT.png",
+            "alias": "icon-CT.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-MR.png",
+            "name": "MR.png",
+            "alias": "icon-MR.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-TCD.png",
+            "name": "TCD.png",
+            "alias": "icon-TCD.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-xgpp.png",
+            "name": "x光拍片.png",
+            "alias": "icon-xgpp.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-rgg.png",
+            "name": "人工肝.png",
+            "alias": "icon-rgg.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-hz.png",
+            "name": "会诊.png",
+            "alias": "icon-hz.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-zy.png",
+            "name": "住院.png",
+            "alias": "icon-zy.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-qtl.png",
+            "name": "其他类.png",
+            "alias": "icon-qtl.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-dtzj.png",
+            "name": "动态装机.png",
+            "alias": "icon-dtzj.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-ylqxys.png",
+            "name": "医疗器械运送.png",
+            "alias": "icon-ylqxys.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-qy.png",
+            "name": "取药.png",
+            "alias": "icon-qy.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-btfy.png",
+            "name": "变态反应.png",
+            "alias": "icon-btfy.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-tl.png",
+            "name": "听力.png",
+            "alias": "icon-tl.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-hxn.png",
+            "name": "呼吸囊.png",
+            "alias": "icon-hxn.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-xjwx.png",
+            "name": "小件维修.png",
+            "alias": "icon-xjwx.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-xjsx.png",
+            "name": "小件送修.png",
+            "alias": "icon-xjsx.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-gjgw.png",
+            "name": "工具归位.png",
+            "alias": "icon-gjgw.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-pbc.png",
+            "name": "平板车.png",
+            "alias": "icon-pbc.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-fwhs.png",
+            "name": "废物回收.png",
+            "alias": "icon-fwhs.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-wbl.png",
+            "name": "微波炉.png",
+            "alias": "icon-wbl.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-xlmzry.png",
+            "name": "心理门诊入院.png",
+            "alias": "icon-xlmzry.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-xdt.png",
+            "name": "心电图.png",
+            "alias": "icon-xdt.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-xdtyq.png",
+            "name": "心电图仪器.png",
+            "alias": "icon-xdtyq.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/kjxzicon.doc",
+            "name": "快捷选择icon.doc",
+            "alias": "kjxzicon.doc"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-jjh.png",
+            "name": "急救盒.png",
+            "alias": "icon-jjh.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-ss.png",
+            "name": "手术.png",
+            "alias": "icon-ss.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-sssbd.png",
+            "name": "手术室冰冻.png",
+            "alias": "icon-sssbd.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-ssd.png",
+            "name": "手术灯.png",
+            "alias": "icon-ssd.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-dyj.png",
+            "name": "打印机.png",
+            "alias": "icon-dyj.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-jbr.png",
+            "name": "接病人.png",
+            "alias": "icon-jbr.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-tj（cbbc）.png",
+            "name": "推机（床边b超）.png",
+            "alias": "icon-tj（cbbc）.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-xdsd.png",
+            "name": "携带沙袋.png",
+            "alias": "icon-xdsd.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-xdbc.png",
+            "name": "携带病床.png",
+            "alias": "icon-xdbc.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-xdly.png",
+            "name": "携带轮椅.png",
+            "alias": "icon-xdly.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-fskzy.png",
+            "name": "放射科造影.png",
+            "alias": "icon-fskzy.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-wsyd.png",
+            "name": "文书约单.png",
+            "alias": "icon-wsyd.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-wsys.png",
+            "name": "文书运送.png",
+            "alias": "icon-wsys.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-wsysty.png",
+            "name": "文书运送退药.png",
+            "alias": "icon-wsysty.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-wstd.png",
+            "name": "文书退单.png",
+            "alias": "icon-wstd.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-wssd.png",
+            "name": "文书送单.png",
+            "alias": "icon-wssd.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-wjc.png",
+            "name": "无菌车.png",
+            "alias": "icon-wjc.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-rjss.png",
+            "name": "日间手术.png",
+            "alias": "icon-rjss.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-xsq.png",
+            "name": "显示器.png",
+            "alias": "icon-xsq.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-ycc.png",
+            "name": "有车床.png",
+            "alias": "icon-ycc.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-yly.png",
+            "name": "有轮椅.png",
+            "alias": "icon-yly.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-bbqg.png",
+            "name": "标本取管.png",
+            "alias": "icon-bbqg.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-bbys.png",
+            "name": "标本运送.png",
+            "alias": "icon-bbys.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-hsgmd.png",
+            "name": "核素骨密度.png",
+            "alias": "icon-hsgmd.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-jcys.png",
+            "name": "检查运送.png",
+            "alias": "icon-jcys.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-jcxyj.png",
+            "name": "检测血压计.png",
+            "alias": "icon-jcxyj.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-jykqg.png",
+            "name": "检验科取管.png",
+            "alias": "icon-jykqg.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-yq.png",
+            "name": "氧气.png",
+            "alias": "icon-yq.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-yd.png",
+            "name": "氧袋.png",
+            "alias": "icon-yd.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-wrc.png",
+            "name": "污染车.png",
+            "alias": "icon-wrc.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-mnbc.png",
+            "name": "泌尿b超.png",
+            "alias": "icon-mnbc.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-wpys.png",
+            "name": "物品运送.png",
+            "alias": "icon-wpys.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-wpsx.png",
+            "name": "物品送修.png",
+            "alias": "icon-wpsx.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-wlk.png",
+            "name": "物流科.png",
+            "alias": "icon-wlk.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-dzhj.png",
+            "name": "电子喉镜.png",
+            "alias": "icon-dzhj.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-dsj.png",
+            "name": "电视机.png",
+            "alias": "icon-dsj.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-ymx.png",
+            "name": "疫苗箱.png",
+            "alias": "icon-ymx.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-brys.png",
+            "name": "病人运送.png",
+            "alias": "icon-brys.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-bl.png",
+            "name": "病历.png",
+            "alias": "icon-bl.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-lxj.png",
+            "name": "离心机.png",
+            "alias": "icon-lxj.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-xxj.png",
+            "name": "纤细镜.png",
+            "alias": "icon-xxj.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-jdt.png",
+            "name": "肌电图.png",
+            "alias": "icon-jdt.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-gbbc.png",
+            "name": "肝病b超.png",
+            "alias": "icon-gbbc.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-gyd.png",
+            "name": "肝硬度.png",
+            "alias": "icon-gyd.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-cj.png",
+            "name": "肠镜.png",
+            "alias": "icon-cj.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-fgn.png",
+            "name": "肺功能.png",
+            "alias": "icon-fgn.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-wj.png",
+            "name": "胃镜.png",
+            "alias": "icon-wj.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-ndt.png",
+            "name": "脑电图.png",
+            "alias": "icon-ndt.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-jtb.png",
+            "name": "脚踏板.png",
+            "alias": "icon-jtb.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-yp.png",
+            "name": "药品.png",
+            "alias": "icon-yp.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-ypys.png",
+            "name": "药品运送.png",
+            "alias": "icon-ypys.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-xyj.png",
+            "name": "血压计.png",
+            "alias": "icon-xyj.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-xtrgs.png",
+            "name": "血透人工肾.png",
+            "alias": "icon-xtrgs.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-yfdw.png",
+            "name": "诱发定位.png",
+            "alias": "icon-yfdw.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-syj.png",
+            "name": "输液架.png",
+            "alias": "icon-syj.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-syb.png",
+            "name": "输液泵.png",
+            "alias": "icon-syb.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-ssgj.png",
+            "name": "输送工具.png",
+            "alias": "icon-ssgj.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-sslb.png",
+            "name": "输送类别.png",
+            "alias": "icon-sslb.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-tjcd.png",
+            "name": "退检查单.png",
+            "alias": "icon-tjcd.png"
+        },
+        {
+            "image": "D:\\kwan\\learn\\myDemo\\node-scripts\\web\\/icon-bnj.png",
+            "name": "鼻内镜.png",
+            "alias": "icon-bnj.png"
+        }
+    ]
+}

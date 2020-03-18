@@ -2,7 +2,7 @@
  * @Author: gyt95.kwan 
  * @Date: 2018-12-09 16:15:11 
  * @Last Modified by: gyt95.kwan
- * @Last Modified time: 2018-12-09 17:32:29
+ * @Last Modified time: 2020-03-18 23:19:27
  */
 
 // 重命名文件，改为拼音首字母拼接
@@ -10,6 +10,10 @@
 /* 场景：
  * 有3个icon，分别是运输中.png、派件中.png、已收件.png，
  * 现要改为拼音首字母拼接，另加"icon"前缀 
+ * icon-ysj.png, icon-pjz.png, icon-ysz.png
+ * 
+ * 建议：
+ * 执行前先备份原三个png文件，再执行脚本。否则会替换掉原文件名
  */
 
 const path = require('path'),
