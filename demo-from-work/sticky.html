@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sticky定位实现吸顶效果</title>
+    <style>
+        h3{ /*设置top值，吸顶。细节：先滚动后固定*/
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+        .content{
+            position: relative;
+        }
+        footer{ /*设置bottom值，吸底。细节：先固定后滚动*/
+            position: sticky;
+            bottom: 10px;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <!-- sticky定位，又称粘性定位。专门用于页面滚动的时候的定位，可以方便实现吸顶条的效果。 -->
+
+    <!-- 原来以前在仿写豆瓣电影app时，看到的滚动页面，该月份固定在顶部的效果叫吸顶，用的就是sticky了 -->
+    <!-- 当真正理解sticky的作用时，我就分得清sticky和fixed的区别了 -->
+    <!-- sticky在元素没有接近设定好的top/left/right/bottom其中一个元素时，有自动吸顶效果，实现固定 -->
+    <!-- 而fixed则是很普通的，默认固定在页面中的某个位置 -->
+    <!-- 由于在不滚动时不会看得出区别，因此正常情况下sticky像是position:relative，只有在滚动时效果才像fixed。 -->
+    <!-- 难怪可以称sticky为relative和fixed的结合体 -->
+
+    <!-- 
+        注意：
+        1、父元素不能overflow:hidden或者overflow:auto属性。
+        2、必须指定top、bottom、left、right4个值之一，否则只会处于相对定位
+        3、父元素的高度不能低于sticky元素的高度
+        4、sticky元素仅在其父元素内生效
+     -->
+    <article>
+        <section>
+            <h3>新闻主题1</h3>
+            <div class="content">
+                <p>jfdsjlkfjlk</p>
+            </div>
+            <footer>网友评论：1</footer>
+        </section>
+        <section>
+            <h3>新闻主题2</h3>
+            <div class="content">
+                <p>jfdsjlkfjlk</p>
+            </div>
+            <footer>网友评论：2</footer>
+        </section>
+        <section>
+            <h3>新闻主题3</h3>
+            <div class="content">
+                <p>jfdsjlkfjlk</p>
+            </div>
+            <footer>网友评论：3</footer>
+        </section>
+        <section>
+            <h3>新闻主题4</h3>
+            <div class="content">
+                <p>jfdsjlkfjlk</p>
+            </div>
+            <footer>网友评论：4</footer>
+        </section>
+        <section>
+            <h3>新闻主题5</h3>
+            <div class="content">
+                <p>jfdsjlkfjlk</p>
+            </div>
+            <footer>网友评论：5</footer>
+        </section>
+        <section>
+            <h3>新闻主题6</h3>
+            <div class="content">
+                <p>jfdsjlkfjlk</p>
+            </div>
+            <footer>网友评论：6</footer>
+        </section>
+        <section>
+            <h3>新闻主题7</h3>
+            <div class="content">
+                <p>jfdsjlkfjlk</p>
+            </div>
+            <footer>网友评论：7</footer>
+        </section>
+        <section>
+            <h3>新闻主题8</h3>
+            <div class="content">
+                <p>jfdsjlkfjlk</p>
+            </div>
+            <footer>网友评论：8</footer>
+        </section>
+    </article>
+</body>
+</html>
