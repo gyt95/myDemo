@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣杯布局 float:left calc</title>
+    <style>
+        header, footer{
+            height: 60px;
+            width: 100%;
+            background: #ccc;
+        }
+        main{
+            width: 100%;
+        }
+        .left{
+            width: 200px;
+            float: left;
+            background: yellow;
+        }
+        .right{
+            width: 300px;
+            float: left;
+            background: lightskyblue;
+        }
+        .middle{
+            /* width: 100%;会把右侧元素顶到下一行，尽管都是float的情况下能在同一行显示 */
+            width: calc(100% - 500px);  /*因此可以通过计算，减去左右两侧的width即可*/
+            float: left;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <header>头部</header>
+    <main>
+        <div class="left">左侧</div>
+        <div class="middle">中间</div>
+        <div class="right">右侧</div>
+    </main>
+    <footer>底部</footer>
+</body>
+</html>

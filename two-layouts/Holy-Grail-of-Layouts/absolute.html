@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣杯布局 absolute绝对定位</title>
+    <style>
+        header, footer{
+            height: 60px;
+            width: 100%;
+            background: #ccc;
+        }
+        main{
+            width: 100%;
+            min-height: 21px;
+            position: relative;
+        }
+        .left{
+            position: absolute;
+            left: 0;
+            width: 200px;
+            background: yellow;
+        }
+        .right{
+            position: absolute;
+            right: 0;
+            width: 300px;
+            background: lightskyblue;
+        }
+        .middle{
+            position: absolute;
+            left: 200px;
+            right: 300px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <header>头部</header>
+    <main>
+        <div class="left">左侧</div>
+        <div class="middle">中间</div>
+        <div class="right">右侧</div>
+    </main>
+    <footer>底部</footer>
+</body>
+</html>

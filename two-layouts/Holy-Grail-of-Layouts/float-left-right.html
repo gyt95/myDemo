@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣杯布局 float:left float:right</title>
+    <style>
+        header, footer{
+            height: 60px;
+            width: 100%;
+            background: #ccc;
+        }
+        main{
+            width: 100%;
+        }
+        .left{
+            width: 200px;
+            float: left;
+            background: yellow;
+        }
+        .right{
+            width: 300px;
+            float: right;
+            background: lightskyblue;
+        }
+        .middle{
+            width: 100%;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <header>头部</header>
+    <main>
+        <div class="left">左侧</div>
+        <div class="right">右侧</div>
+        <div class="middle">中间</div>
+        <!-- 这里要注意的是，float的元素默认是块级元素，会独占一行 -->
+    </main>
+    <footer>底部</footer>
+</body>
+</html>

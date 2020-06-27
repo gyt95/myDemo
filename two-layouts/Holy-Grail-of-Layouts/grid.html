@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣杯布局 grid</title>
+    <style>
+        header,main,footer{
+            display: grid;
+        }
+        header,footer{
+            height: 60px;
+            background: #ccc;
+        }
+        header{
+            grid-row: 1;
+            grid-column: 1/5;
+        }
+        main{
+            grid-row: 2;
+            grid-template-columns: 200px auto 300px;   /*固定部分元素宽度，自适应的元素则用auto*/
+        }
+        footer{
+            grid-row: 3;
+        }
+        /* 用grid-column则无法固定左右宽度 */
+        .left{
+            /* grid-column: 1/2; */
+            background: yellow;
+        }
+        .middle{
+            /* grid-column: 2/7; */
+            background: red;
+        }
+        .right{
+            /* grid-column: 7/8; */
+            background: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+    <header>头部</header>
+    <main>  <!-- grid布局中的容器 -->
+        <!-- 以下是grid布局中的项目item。注意：只有顶级子元素叫项目，如果div有嵌套子元素例如<p>，则<p>不算项目 -->
+        <div class="left">左侧</div>    
+        <div class="middle">中间</div>
+        <div class="right">右侧</div>
+    </main>
+    <footer>底部</footer>
+</body>
+</html>
