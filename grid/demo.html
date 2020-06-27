@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid实现响应式布局demo</title>
+    <style>
+        .normal {
+            display: grid;    
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 50px 350px 50px;
+            grid-gap: 5px;
+            text-align: center;
+        }
+        .container1{
+            grid-template-areas:
+            "h h h h h h h h h h h h"
+            "m m c c c c c c c c c c"
+            "f f f f f f f f f f f f";
+        }
+        .container2{
+            grid-template-areas:
+            ". h h h h h h h h h h ."
+            "c c c c c c c c c c m m"
+            ". f f f f f f f f f f .";
+        }
+        @media screen and (max-width: 1280px) {
+            .container2 {
+                grid-template-areas:
+                    "m m m m m m h h h h h h"
+                    "c c c c c c c c c c c c"
+                    "f f f f f f f f f f f f";
+            }
+        }
+        .header {
+            grid-area: h;
+            background: yellowgreen;
+            border-radius: 10px;
+        }
+        .menu {
+            grid-area: m;
+            background: gold;
+        }
+        .content {
+            grid-area: c;
+            background: deepskyblue;
+        }
+        .footer {
+            grid-area: f;
+            background: violet;
+        }
+    </style>
+</head>
+<body>
+    <div class="normal container1">
+        <div class="header">HEADER</div>
+        <div class="menu">MENU</div>
+        <div class="content">CONTENT</div>
+        <div class="footer">FOOTER</div>
+    </div>
+    <br>
+    <br>
+    <div class="normal container2">
+        <div class="header">HEADER</div>
+        <div class="menu">MENU</div>
+        <div class="content">CONTENT</div>
+        <div class="footer">FOOTER</div>
+    </div>
+</body>
+</html>
