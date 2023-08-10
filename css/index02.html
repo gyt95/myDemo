@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>第2题</title>
+		<style type="text/css">
+			/* 
+        此题答错 ❌
+        #father 确实权重高，但继承的权重是0。意思是color属性不会被继承
+        因此，#father 规则中的 color 属性不会应用到 p 标签上，而是被 p 规则中的 color: blue; 所覆盖。
+      */
+			#father {
+				/* 100 */
+				color: red; /* 继承的权重为0 */
+			}
+			p {
+				/* 1 ✅ */
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="father">
+			<p>试问这行字体是什么颜色的？</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>第4题</title>
+		<style type="text/css">
+			/* 第一层div是红色，第二层是蓝色，覆盖了第一层的红色，第三层是继承了上一层的蓝色 */
+			/* 个人觉得其实也可以看权重，因为第三层div符合两个样式设置，那么第一个权重是2，第二个权重是1，而且又是同等级选择器，所以蓝色。 */
+			div div {
+				/* 2 */
+				color: blue;
+			}
+			div {
+				/* 1 */
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div>
+				<div>试问这行字体是什么颜色的？</div>
+			</div>
+		</div>
+	</body>
+</html>

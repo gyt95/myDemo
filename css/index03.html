@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>第3题</title>
+		<style type="text/css">
+			/* 此题答对 ✅ 理解什么是“继承的权重是0” */
+			div p {
+				/* 2 */
+				color: red;
+			}
+			#father {
+				/* 100 */
+				/* 根据 02 的经验，#father 的继承权重是0，所以p标签的字体颜色，是蓝色 */
+				color: red;
+			}
+			p.c2 {
+				/* 21 */
+				/* 权重大于第一个，即 div p  */
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="father" class="c1">
+			<p class="c2">试问这行字体是什么颜色的？</p>
+		</div>
+	</body>
+</html>
