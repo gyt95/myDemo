@@ -5,14 +5,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>第3题</title>
 		<style type="text/css">
-			/* 此题答对 ✅ 理解什么是“继承的权重是0” */
+			/* 此题答对 ✅ 理解什么是“继承的权重是0”（其实没理解，后来再更新才理解） */
 			div p {
 				/* 2 */
 				color: red;
 			}
 			#father {
 				/* 100 */
-				/* 根据 02 的经验，#father 的继承权重是0，所以p标签的字体颜色，是蓝色 */
+				/* 结合 02 ，由于没有直接作用于 p 标签，所以 #father 作为父元素，子元素 p （继承）得到的权重是0 */
 				color: red;
 			}
 			p.c2 {
